@@ -1,33 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [disabled, setDisabled] = useState(false);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h3 data-testId="counter">{count}</h3>
-        <button 
-        data-testId="minus-button" 
-        onClick={() => setCount((prev) => prev - 1)}
-        disabled={disabled} >
-          -
-        </button>
-        <button 
-        data-testId="plus-button" 
-        onClick={() => setCount((prev) => prev + 1)}
-        disabled={disabled} >
-          +
-        </button>
+        <h3 data-testId="counter">{counter}</h3>
         <div>
           <button
-            style={{backgroundColor: 'blue'}}
-            data-testId='on/off-button'
-            onClick={() => setDisabled(prev => !prev)}
-            >
+            data-testId="minus-button"
+            onClick={() => setCounter((count) => count - 1)}
+            disabled={disabled}
+          >
+            -
+          </button>
+          <button
+            data-testId="plus-button"
+            onClick={() => setCounter((count) => count + 1)}
+            disabled={disabled}
+          >
+            +
+          </button>
+        </div>
+        <div>
+          <button
+            data-testId="on/off-button"
+            style={{ backgroundColor: "blue" }}
+            onClick={() => setDisabled((prev) => !prev)}
+          >
             on/off
           </button>
         </div>
